@@ -1,0 +1,16 @@
+{
+  "name": "tabling",
+  "version": "1.0.0",
+  "description": "--- * Desktop과 Mobile 모두들 지원하는 예약 목록 화면을 개발하세요.",
+  "main": "sever.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}

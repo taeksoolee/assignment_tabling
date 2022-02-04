@@ -1,0 +1,336 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* global var */
+:root {
+  --background-color: #CED8E4;
+  --light-color: #FFFFFF;
+  
+  --primary-color: #162149;
+  --secondary-color: #3BB94C;
+  --info-color: #ababab;
+
+  --title-size: 70px;
+  --default-size: 20px;
+
+  --extra-small-space: 3px;
+  --small-space: 10px;
+  --default-space: 20px;
+  --large-space: 30px;
+  --extra-large-space: 50px;
+
+  --button-border-radius: 5px;
+  --default-border-radius: 10px;
+}
+
+* {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: var(--default-size);
+
+  line-height: 30px;
+}
+
+page-background {
+  background-color: var(--background-color);
+  height: 100vh;
+  display: block;
+
+  padding: 0 var(--default-space);
+}
+
+page-title>h1 {
+  text-align: center;
+  font-size: var(--title-size);
+  height: var(--title-size);
+  font-weight: normal;
+  padding-top: calc(var(--large-space) * 2);
+  padding-bottom: calc(var(--extra-large-space) * 2);
+}
+
+
+
+reservation-list {
+  flex: 1;
+  display: block;
+
+  height: calc(
+    100vh - (var(--large-space) * 2) - (var(--extra-large-space) * 2) - var(--title-size) - (var(--default-space) * 2)
+  );
+
+  overflow-y: scroll;
+}
+
+reservation-list>div {
+  margin: var(--extra-small-space);
+}
+
+reservation-item {
+  display: flex;
+
+  height: 130px;
+  background-color: var(--light-color);
+  padding: var(--default-space);
+  margin: var(--default-space) 0;
+
+  border-radius: var(--default-border-radius);
+}
+
+reservation-item:nth-child(1) {
+  margin-top: 0;
+}
+
+
+reservation-item>div {
+  display: flex;
+  flex-direction:column;
+  justify-content: center;
+}
+
+reservation-item>div:nth-child(1) {
+  align-items: center;
+  margin-left: 0;
+  width: 100px;
+}
+
+reservation-item>div:nth-child(2) {
+  flex: 1;
+}
+
+reservation-item>div:nth-child(2)>div {
+  width: calc(100vw - (var(--default-space) * 7) - 100px - 150px - 500px);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+reservation-item>div:nth-child(3) {
+  align-items: center;
+  width: 150px;
+}
+
+reservation-item>div>div {
+  margin-top: var(--small-space);
+  line-height: calc(10px + var(--small-space));
+}
+
+reservation-item>div>div:nth-child(1) {
+  margin-top: 0;
+}
+
+reservation-item:last-child {
+  margin-bottom: 0;
+}
+
+reservation-detail {
+  width: 500px;
+  /* view height - page-title height  - (margin - padding) */
+  height: calc(
+    100vh - (var(--large-space) * 2) - (var(--extra-large-space) * 2) - var(--title-size) - (var(--default-space) * 2)
+  );
+  margin: 0;
+  padding: 0 var(--default-space);
+  display: block;
+  overflow-y: scroll;
+  background-color: var(--light-color);
+  border-radius: var(--default-border-radius);
+}
+
+reservation-detail>h3 {
+  font-size: 40px;
+  text-align: center;
+  margin: var(--extra-large-space) 0;
+}
+
+reservation-detail>div {
+  display: flex;
+  margin-top: var(--default-space);
+}
+
+reservation-detail>div:last-child {
+  margin-bottom: var(--extra-large-space);
+}
+
+reservation-detail>div>label {
+  color: var(--info-color);
+  width: 100px;
+}
+
+reservation-detail>div>div {
+  flex: 1;
+}
+
+section {
+  display: flex;
+  /* view height - page-title height */
+  height: calc(100vh - (var(--large-space) * 2) - (var(--extra-large-space) * 2) - var(--title-size));
+}
+
+section>* {
+  margin-left: var(--default-space);
+}
+
+section>*:nth-child(1) {
+  margin-left: 0;
+}
+
+.primary-btn {
+  background-color: var(--primary-color);
+  color: #FFFFFF;
+  padding: var(--small-space);
+  border-radius: var(--button-border-radius);
+  border: none;
+
+  width: 100px;
+}
+
+.primary-btn:hover {
+  opacity: .8;
+}
+
+.reserved-text {
+  color: var(--secondary-color);
+}
+
+.seated-text {
+  color: var(--primary-color);
+}
+
+.mt-xl {
+  margin-top: var(--extra-large-space);
+}
+
+.modal-close-btn {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 30px;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+  font-size: 25px;
+}
+
+.modal-close-btn:hover {
+  opacity: .5;
+}
+
+.modal-overlay {
+  display: none;
+}
+
+
+/* Mobile */
+@media (max-width: 1024px) {
+  reservation-item>div:nth-child(1) {
+    width: 80px;
+  }
+  
+  reservation-item>div:nth-child(2)>div {
+    width: calc(100vw - (var(--default-space) * 4) - 80px - 90px);
+  }
+  
+  reservation-item>div:nth-child(3) {
+    width: 90px;
+  }
+  
+  reservation-detail {
+    display: block;
+    opacity: 0;
+    
+    position: absolute;
+    left: 0;
+    top: 100vh;
+    height: 0;
+    width: calc(100vw - 60px);
+    margin: 0;
+    padding: 0 30px;
+    border-radius: 40px 40px 0px 0px;
+    overflow-y: scroll;
+
+    z-index: 3;
+
+    transition: top .3s ease-in;
+  }
+
+  reservation-detail.open {
+    display: block;
+    opacity: 1;
+    height: calc(100vh / 10 * 9);
+    top: calc(100vh - (100vh / 10 * 9));
+  }
+
+  reservation-detail>div {
+    margin-top: var(--large-space);
+  }
+
+  .modal-close-btn {
+    display: block;
+  }
+
+  .modal-overlay {
+    display: block;
+
+    position: fixed;
+    opacity: 0;
+    width: 100vw;
+    height: 0;
+    background-color: rgba(0,0,0,.7);
+    top: 0;
+    left: 0;
+
+    transition: opacity .3s ease-in;
+  
+    z-index: 2;
+  }
+
+  .modal-overlay.open {
+    opacity: 1;
+    height: 100vh;
+  }
+}
