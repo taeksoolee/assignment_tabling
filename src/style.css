@@ -76,6 +76,15 @@ table {
   line-height: 30px;
 }
 
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
 page-background {
   background-color: var(--background-color);
   height: 100vh;
@@ -93,8 +102,6 @@ page-title>h1 {
   padding-bottom: calc(var(--extra-large-space) * 2);
 }
 
-
-
 reservation-list {
   flex: 1;
   display: block;
@@ -104,6 +111,12 @@ reservation-list {
   );
 
   overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+reservation-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }
 
 reservation-list>div {
@@ -176,9 +189,17 @@ reservation-detail {
   margin: 0;
   padding: 0 var(--default-space);
   display: block;
+
   overflow-y: scroll;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  
   background-color: var(--light-color);
   border-radius: var(--default-border-radius);
+}
+
+reservation-detail::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
 }
 
 reservation-detail>h3 {
@@ -291,7 +312,6 @@ section>*:nth-child(1) {
     margin: 0;
     padding: 0 30px;
     border-radius: 40px 40px 0px 0px;
-    overflow-y: scroll;
 
     z-index: 3;
 
